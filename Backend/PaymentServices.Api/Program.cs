@@ -2,6 +2,8 @@ using PaymentServices.Repo.Data;
 using PaymentServices.Repo.Repositiories;
 using PaymentServices.Repo.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,10 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<DatabaseContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnect")));
 
-builder.Services.AddScoped(typeof(IGenericRepo<>), typeof(GenericRepo<>));
+builder.Services.AddScoped(typeof(IGenericsRepo<>), typeof(GenericRepo<>));
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -22,6 +27,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();

@@ -15,7 +15,7 @@ namespace PaymentServices.Repo.Data
             : base(options) { }
 
         public DbSet<Payment> Payment { get; set; }
-
+        public DbSet<Admin> Admin { get; set; }
 
 
     }
