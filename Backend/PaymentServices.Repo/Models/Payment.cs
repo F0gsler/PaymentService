@@ -6,16 +6,16 @@ namespace PaymentServices.Repo.Models
     {
         [Key]
         public int PersonId { get; set; }
-        public string username { get; set; }
-        public string email { get; set; }
+        public string? username { get; set; }
+        public string? email { get; set; }
     }
 
     public class Admin
     {
         [Key]
         public int AdminId { get; set; }
-        public string username { get; set; }
-        public string password { get; set; }
-        public required int adminlevel { get; set; }
+        public string? username { get; set; }
+        public string? password { get; set; }
+        public required bool adminlevel { get; set; }
     }
 }

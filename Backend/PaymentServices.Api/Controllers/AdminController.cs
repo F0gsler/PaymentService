@@ -12,35 +12,20 @@ namespace PaymentServices.Api.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
-        public IGenericsRepo<Payment> _repo;
-        public AdminController(IGenericsRepo<Payment> repo)
+        public IGenericsRepo<Admin> _repo;
+
+        public AdminController(IGenericsRepo<Admin> repoAdmin)
         {
-            _repo = repo;
+            _repo = repoAdmin;
         }
-        [HttpPost("PostPaypent")]
-        public Task<Payment> PostPayment([FromBody] Payment payment)
+
+        [HttpPost("createAdminUser")]
+        public Task<Admin> CreateAdminUser([FromBody] Admin admin)
         {
-            var created = _repo.Add(payment);
+            var created = _repo.Add(admin);
             return created;
         }
 
-        [HttpGet("{id}")]
-        public async Task<Payment> GetPaymentsById(int id)
-        {
-            return await _repo.GetPaymentById(id);
-        }
-
-        [HttpGet("GetAllPayments")]
-        public async Task<IEnumerable<Payment>> GetAllPayments()
-        {
-            var PaymentsHistory = await _repo.GetAllPayments();
-            return PaymentsHistory;
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<Payment> DeletePayment(int id)
-        {
-            return await _repo.DeletePayment(id);
-        }
+       
     }
 }

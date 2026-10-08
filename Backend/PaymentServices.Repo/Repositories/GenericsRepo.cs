@@ -42,5 +42,12 @@ namespace PaymentServices.Repo.Repositiories
             return item;
         }
 
+        //public async Task<T> SumAllTogether(int count)
+        //{
+        //    foreach (var item in dbSet) { 
+        //    var sum = 
+        //    }
+        //}
+
     }
 }

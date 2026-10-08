@@ -11,8 +11,8 @@ using PaymentServices.Repo.Data;
 namespace PaymentServices.Repo.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20261002205143_1")]
-    partial class _1
+    [Migration("20261004200103_Test")]
+    partial class Test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,15 +32,13 @@ namespace PaymentServices.Repo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
 
-                    b.Property<int>("adminlevel")
-                        .HasColumnType("int");
+                    b.Property<bool>("adminlevel")
+                        .HasColumnType("bit");
 
                     b.Property<string>("password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AdminId");
@@ -57,11 +55,9 @@ namespace PaymentServices.Repo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PersonId"));
 
                     b.Property<string>("email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonId");

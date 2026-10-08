@@ -1,36 +1,161 @@
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f7fa;
+  color: #24292e;
+  font-family: Arial, sans-serif;
+}
+
 .Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid black;
-    flex-wrap: wrap;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8dee8;
+  flex-wrap: wrap;
+  padding: 10px 24px;
+  background: #fff;
 }
 
 .NavbarLeft {
   justify-content: flex-start;
   padding: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: medium;
 }
+
+#homeHeader {
+  margin: 0;
+  color: #2457a7;
+}
+
 .NavbarRight {
   justify-content: flex-end;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .CommonButton {
-   margin: 6px 10px 0;
-    padding: 6px 16px;
-    border: 1px solid rgba(27, 31, 35, 0.2);
-    border-radius: 6px;
-    background: #fafbfc;
-    color: #24292e;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
+  margin: 6px 10px 0;
+  padding: 8px 16px;
+  border: 1px solid #c8d1df;
+  border-radius: 6px;
+  background: #fff;
+  color: #24292e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.CommonButton:hover {
-  background-color: #111315;
+.home-page {
+  width: min(100% - 32px, 720px);
+  margin: 40px auto;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.admin-card {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid #e0e6ef;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 24px #1e35520d;
+}
+
+.admin-card h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.admin-card-description {
+  margin: 8px 0 20px;
+  color: #667085;
+  line-height: 1.5;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid #c8d1df;
+  border-radius: 6px;
+  background: #fff;
+  color: #24292e;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover {
+  background: #eaf1fb;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 9px 12px;
+  border: 1px solid #c8d1df;
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.admin-level-button,
+.create-admin-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.admin-level-button {
+  color: #344054;
+}
+
+.create-admin-button {
+  border-color: #2457a7;
+  background: #2457a7;
+  color: #fff;
+  font-weight: bold;
+}
+
+.create-admin-button:hover {
+  background: #1d4789;
+}
+
+.admin-message {
+  margin: 16px 0 0;
+  color: #2457a7;
+}
+
+input:focus {
+  border-color: #3974c6;
+  outline: 2px solid #3974c633;
+}
+
+@media (max-width: 480px) {
+  .Navbar {
+    padding: 8px 12px;
+  }
+
+  .NavbarRight {
+    justify-content: flex-start;
+  }
+
+  .home-page {
+    margin-top: 24px;
+  }
+
+  .home-actions {
+    justify-content: flex-start;
+  }
+
+  .admin-card {
+    padding: 20px;
+  }
 }

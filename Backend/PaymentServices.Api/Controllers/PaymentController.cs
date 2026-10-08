@@ -42,5 +42,10 @@ namespace PaymentServices.Api.Controllers
         {
             return await _repo.DeletePayment(id);
         }
+        //[HttpGet("GetSumOfPayments")]
+        //public async Task<Payment> GetSumOfPayments()
+        //{
+
+        //}
     }
 }
